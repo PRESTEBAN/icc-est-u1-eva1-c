@@ -1,3 +1,8 @@
+
+import Controllers.BoookControler;
+import Models.Book;
+import Views.ViewConsole;
+
 public class App {
     public static void main(String[] args) throws Exception {
 
@@ -33,6 +38,27 @@ public class App {
                 new Book("Deep Learning", 2016),
                 new Book("The Elements of Statistical Learning", 2001)
         };
+        
+        BoookControler bC = new BoookControler();
+        ViewConsole vC = new ViewConsole();
+        vC.showMessage("---------------- Arreglo sin ordenar ----------------");;
+        vC.mostrarArreglo(books);
+        bC.sortByName(books);
+        vC.showMessage("---------------- Arreglo ordenado desc. ----------------");
+        vC.mostrarArreglo(books);
+        Book book = bC.searchByName(books, "Python the best book");
+        
+        if (book!=null) {
+            vC.showBook(book);
+        }else{
+            vC.showMessage("Error libro no encontrado");
+        }
 
+        Book book2 = bC.searchByName(books, "Deep Learning");
+        if (book2!=null) {
+            vC.showBook(book2);
+        }else{
+            vC.showMessage("Error libro no encontrado");
+        }
     }
 }
