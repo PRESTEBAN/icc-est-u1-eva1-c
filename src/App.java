@@ -41,7 +41,7 @@ public class App {
         
         BoookControler bC = new BoookControler();
         ViewConsole vC = new ViewConsole();
-        vC.showMessage("---------------- Arreglo sin ordenar ----------------");;
+        vC.showMessage("---------------- Arreglo sin ordenar ----------------");
         vC.mostrarArreglo(books);
         bC.sortByName(books);
         vC.showMessage("---------------- Arreglo ordenado desc. ----------------");
@@ -49,6 +49,7 @@ public class App {
         Book book = bC.searchByName(books, "Python the best book");
         
         if (book!=null) {
+            vC.showMessage("Libro encontrado: ");
             vC.showBook(book);
         }else{
             vC.showMessage("Error libro no encontrado");
@@ -56,6 +57,7 @@ public class App {
 
         Book book2 = bC.searchByName(books, "Deep Learning");
         if (book2!=null) {
+            vC.showMessage("Libro encontrado: ");
             vC.showBook(book2);
         }else{
             vC.showMessage("Error libro no encontrado");
