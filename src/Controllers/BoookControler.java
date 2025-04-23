@@ -36,13 +36,12 @@ public class BoookControler {
             if (bookMedio.equalsIgnoreCase(name)) {
               return books[medio];
             }else if (bookMedio.compareTo(name)<0) {
-                inicio = medio + 1;
+                inicio = medio - 1;
             }else{
-                fin = medio - 1;
+                fin = medio + 1;
             }
 
         }
-
         return null;
     }
 }
