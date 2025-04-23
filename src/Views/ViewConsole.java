@@ -16,6 +16,7 @@ public class ViewConsole {
         System.out.println(menssage);
     }
     public Book showBook(Book book){
+        System.out.println("Libro encontrado: ");
         System.out.println(book);
         return book;
     }
